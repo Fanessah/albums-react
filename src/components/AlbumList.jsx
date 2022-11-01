@@ -1,7 +1,7 @@
 import {useState,useEffect} from 'react'
 import AlbumCard from './AlbumCard'
 
-export default function AlbumList() {
+export default function AlbumList({toggle}) {
     const [albums,setAlbums] = useState()
     useEffect(() => {
         fetch('https://albums-api-fh.web.app/albums')
@@ -9,7 +9,7 @@ export default function AlbumList() {
         .then(setAlbums)
         .catch(alert)
  
-    }, []) 
+    }, [toggle]) 
     return (
     <main className= 'album-list'>
        
